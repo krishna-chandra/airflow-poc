@@ -1,1 +1,2 @@
-apache-airflow-providers-amazon==1.2.0
+apache-airflow[amazon]==1.10.12
+boto3==1.17.44

@@ -49,8 +49,9 @@
       AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
       AIRFLOW__CORE__LOAD_EXAMPLES: 'true'
       AIRFLOW__API__AUTH_BACKEND: 'airflow.api.auth.backend.basic_auth'
-      AIRFLOW__CORE__XCOM_BACKEND: includes.s3_xcom_backend.S3XComBackend
       PYTHONPATH: /opt/airflow
+      AWS_ACCESS_KEY_ID: AKIAWLHBXTQH5FUBYHW7
+      AWS_SECRET_ACCESS_KEY: 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
       AIRFOW_CONN_AWS_DEFAULT: aws://?profile=airflow-xcoms&s3_configfiles=/opt/airflow/creds/s3&s3_config_format=aws
     volumes:
       - ./airflow-data/includes:/opt/airflow/includes
