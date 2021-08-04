@@ -48,6 +48,7 @@
       AIRFLOW__CORE__FERNET_KEY: ''
       AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
       AIRFLOW__CORE__LOAD_EXAMPLES: 'true'
+      AIRFLOW__API__AUTH_BACKEND: 'airflow.api.auth.backend.basic_auth'
       AIRFLOW__CORE__XCOM_BACKEND: includes.s3_xcom_backend.S3XComBackend
       PYTHONPATH: /opt/airflow
       AIRFOW_CONN_AWS_DEFAULT: aws://?profile=airflow-xcoms&s3_configfiles=/opt/airflow/creds/s3&s3_config_format=aws
@@ -57,6 +58,7 @@
       - ./dags:/opt/airflow/dags
       - ./logs:/opt/airflow/logs
       - ./plugins:/opt/airflow/plugins
+      - ./airflow-data/configs/airflow.cfg:/opt/airflow/configs/airflow.cfg
     user: "${AIRFLOW_UID:-50000}:${AIRFLOW_GID:-50000}"
     command: pip3 install -r requirements.txt
     depends_on:
