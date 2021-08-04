@@ -1,5 +1,5 @@
 git clone <url>  
-chmod -R 777 ./logs
+chmod -R 777 ./logs  
 sudo docker-compose up --build
 
   
