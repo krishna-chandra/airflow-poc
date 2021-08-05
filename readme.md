@@ -1,4 +1,6 @@
 git clone <url>  
+mkdir ./dags ./logs ./plugins  
+echo -e "AIRFLOW_UID=$(id -u)\nAIRFLOW_GID=0" > .env   
 chmod -R 777 ./logs  
 sudo docker-compose up --build
 
